@@ -20,7 +20,11 @@ public class RSA {
 
     private Pair<BigInteger, BigInteger> publicKey;
 
-    public RSA( int keySize) {
+    public Pair<BigInteger, BigInteger> getPublicKey() {
+        return publicKey;
+    }
+
+    public RSA(int keySize) {
 
         while (gcd(SYMBIT,x) != BigInteger.ONE) {
             BigInteger p = BigInteger.probablePrime(keySize/2, random);
@@ -33,7 +37,7 @@ public class RSA {
         publicKey = new Pair<>(SYMBIT, y);
     }
 
-    private BigInteger encrypt(BigInteger i){
+    public BigInteger encrypt(BigInteger i){
         return i.modPow(SYMBIT, y);
     }
 
