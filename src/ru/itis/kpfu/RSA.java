@@ -41,7 +41,7 @@ public class RSA {
         return i.modPow(SYMBIT, y);
     }
 
-    private BigInteger decrypt(BigInteger i){
+    public BigInteger decrypt(BigInteger i){
         return  i.modPow(z, y);
     }
 
